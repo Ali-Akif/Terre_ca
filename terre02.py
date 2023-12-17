@@ -8,3 +8,5 @@ file_segmentation = file_path.split("\\")
 file_name = file_segmentation[-1]
 
 print(file_name) 
+
+input("Entrée pour sortir..."   )
