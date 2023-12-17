@@ -4,9 +4,8 @@ import sys
 
 alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
-if sys.argv > 1 and sys.argv < 3:
-    argument_terminal = sys.argv[1]
+argt_terminal = sys.argv[1]
 
-argument_terminal = argument_terminal.index(argument_terminal)
+index = alphabet.index(argt_terminal)
 
-print(alphabet[argument_terminal:])
+print(alphabet[index:])
