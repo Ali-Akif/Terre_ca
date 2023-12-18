@@ -4,16 +4,17 @@ import sys
 
 alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
-if len(sys.argv) == 2 : 
-    for arg in sys.argv[1:]:
+if len(sys.argv) == 2:
+    
+    for arg in sys.argv[1]:
         arg = arg.lower()
         if arg in alphabet:
             index = alphabet.index(arg)
-            print("".join(alphabet[index :]))
+            print("".join(alphabet[index:]))
         else:
-            print("L'argument n'est pas dans l'alphabet")
-elif len(sys.argv) > 2:
-    print("Merci de ne rentrer qu'un seul argument")
+            print(" pas dans alphabet")
+else:
+    print("rentre une lettre de l'alphabet en argument frère")
 
-elif len(sys.argv) == 1:
-    print("Merci de rentrer une lettre de l'alphabet en argument")
+
+    
