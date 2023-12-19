@@ -1,10 +1,4 @@
-#Créez un programme qui affiche l’alphabet en lettres minuscules suivi d’un retour à la ligne.
+import sys
 
-# -*- coding: utf-8 -*-
-
-for l in "abcdefghijklmnopqrstuvwxyz":
-    print(l, end='') # 'chaine vide', on peut faire '\n' et probablement d'autres trucs
-
-print()
-
-input("Entrée pour sortir...")
+file_name = sys.argv[0]
+print(file_name)
