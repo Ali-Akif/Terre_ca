@@ -1,21 +1,17 @@
-#Créez un programme qui permet de déterminer si l’argument donné est un entier pair ou impair..
+#Créez un programme qui affiche le résultat et le reste d’une division entre deux nombres.
 
 import sys
 
-if len(sys.argv) <= 2:
+numerateur = sys.argv[1]
+denominateur = sys.argv[2]
 
-    for i in sys.argv[1:]:
-        try:
-            nb = int(i) 
-            if nb % 2 == 0:
-                print("pair")
-            elif nb % 2 != 0:
-                print("impair")
+numerateur = int(numerateur)
+denominateur = int(denominateur)
+resultat = numerateur / denominateur
+reste = numerateur % denominateur
+resultat = str(resultat).split(".")
 
-        except ValueError:
-            print("tu ne me la mettras pas à l'envers...")
-            sys.exit(1)
+print("resultat:", resultat[0])
+print("reste:", reste)
 
-
-else:
-    print("Tu ne me la mettras pas à l'envers...")
+ 
