@@ -1,12 +1,7 @@
-# -*- coding: utf-8 -*-
+#Créez un programme qui affiche les arguments qu’il reçoit ligne par ligne, peu importe le nombre d’arguments.
 
+import sys
 
-# Créez un programme qui affiche son nom de fichier
-
-file_path = __file__
-file_segmentation = file_path.split("\\")
-file_name = file_segmentation[-1]
-
-print(file_name) 
-
-input("Entrée pour sortir..."   )
+arg = sys.argv[1:]
+for i in arg:
+    print(i)
