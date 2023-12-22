@@ -1,4 +1,12 @@
+import os
 import sys
 
-file_name = sys.argv[0]
-print(file_name)
+#si executé depuis le terminal :
+
+print(sys.argv[0])
+
+#si executé autrement :
+
+chemin = __file__
+fichier = os.path.basename(chemin)
+print("Nom du fichier :", fichier)
