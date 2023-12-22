@@ -2,16 +2,27 @@
 
 import sys
 
-numerateur = sys.argv[1]
-denominateur = sys.argv[2]
+if len(sys.argv[1:]) != 2:
+    print("erreur.")
+    exit()
+elif not sys.argv[1].lstrip("+-").isdigit():
+    print("erreur.")
+    exit()
+elif not sys.argv[2].lstrip("+-").isdigit():
+    print("erreur.")
+    exit()
 
-numerateur = int(numerateur)
-denominateur = int(denominateur)
-resultat = numerateur / denominateur
-reste = numerateur % denominateur
-resultat = str(resultat).split(".")
+a = int(sys.argv[1])
+b = int(sys.argv[2])
 
-print("resultat:", resultat[0])
-print("reste:", reste)
+if b > a:
+    print("erreur.")
+    exit()
 
- 
+elif b == 0:
+    print("erreur.")
+    exit()
+
+else:
+    print(f"""résultat: { a // b}
+reste: { a % b }""")
