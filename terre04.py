@@ -1,21 +1,17 @@
-#Créez un programme qui permet de déterminer si l’argument donné est un entier pair ou impair..
-
 import sys
 
-if len(sys.argv) <= 2:
+arg = sys.argv[1:]
 
-    for i in sys.argv[1:]:
-        try:
-            nb = int(i) 
-            if nb % 2 == 0:
-                print("pair")
-            elif nb % 2 != 0:
-                print("impair")
+if len(arg) > 1:
+    print("Rentre qu'un seul argument.")
+    exit()
 
-        except ValueError:
-            print("tu ne me la mettras pas à l'envers...")
-            sys.exit(1)
+if not int(arg[0].lstrip("+-").isdigit()):
+    print("Tu ne me la mettras pas à l'envers.")
+    exit()
 
+elif int(arg[0]) % 2 == 0:
+    print("pair")
 
 else:
-    print("Tu ne me la mettras pas à l'envers...")
+    print("impair")
