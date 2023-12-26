@@ -2,6 +2,9 @@ import os
 import sys
 import inspect
 
+
+# FUNCTIONS
+
 def create_alphabet():
     """
     Create a list with alphabet in lowercase.
@@ -47,14 +50,6 @@ def arguments_printer ():
     for arg in arguments:
         print(arg)
     
-def EH_argument_is_digit(arg, a):
-    """
-    Error Handling to verify the given argument is a digit, valid with +00 and -00. Meant to be used with a list. a is for the number of arguments desired
-    """
-    if not (len(arg) == a and "".join(arg).lstrip("-+").isdigit()):
-        print("error.")
-        exit()
-
 def even_odd(number):
     """
     Test an int, return even or odd.
@@ -80,4 +75,39 @@ def result_remain(a, b):
         print("error")
     else:
         print(f"""Result : {a // b}
-Remain : {a % b}""")
+Remain : {a % b}""") 
+
+def reverse_string(string):
+    """
+    Reverse a string
+    
+    Returns:
+        print reverse string
+    """
+    reverse_string = ""
+    for i in string:
+        reverse_string = i + reverse_string
+    print(reverse_string)
+
+# Error Handling Function
+    
+def EH_argument_lenght(arg, a):
+    """
+    Verify the lenght of a list
+    """
+    if not len(arg) == a:
+        print("error.")
+        exit()
+
+def EH_argument_is_digit(arg, a):
+    """
+    Error Handling to verify the given argument is a digit, valid with +00 and -00. Meant to be used with a list. a is for the number of arguments desired
+    """
+    if not (len(arg) == a and "".join(arg).lstrip("-+").isdigit()):
+        print("error.")
+        exit()
+
+def EH_string_not_only_digit(string):
+    if string.isdigit():
+        print("error.")
+        exit()

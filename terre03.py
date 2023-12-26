@@ -11,7 +11,7 @@ if not (len(sys.argv) == 2 and sys.argv[1].lower() in create_alphabet()):
     exit()
 
 
-# Part 2 : Parsing
+# Part 2 : Parsing and Resolution
 
 letter = sys.argv[1].lower()
 alphabet = create_alphabet()

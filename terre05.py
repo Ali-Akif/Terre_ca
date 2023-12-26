@@ -4,13 +4,15 @@ import sys
 from terre_fonctions import EH_argument_is_digit, result_remain
 
 
-# Part A : Error Handling
+# Part 1 : Error Handling
 
 EH_argument_is_digit(sys.argv[1:], 2)
+
 
 # Part 2 : Slicing
 
 a, b = int(sys.argv[1]), int(sys.argv[2])
+
 
 # Part 3 : Resolution and display
 

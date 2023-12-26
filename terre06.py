@@ -1,22 +1,21 @@
+# REVERSE A STRING
+
 import sys
-
-if len(sys.argv) == 1:
-    exit()
-chaine = " ".join(sys.argv[1:])
+from terre_fonctions import EH_argument_lenght, reverse_string
 
 
-    # méthode 1:
+# Part 1 : Parcing
 
-for i in range(len(chaine)):
-    print(chaine[-i-1],end="")
-print()
+arg = sys.argv[1:]
 
 
-    # méthode 2:
+# Part 2 : Error Handling
 
-print(chaine[::-1], end="")
-print()
+EH_argument_lenght(arg, 1)
 
 
-    # méthode 3:
-print(chaine[len(chaine):-1:-1])
+# Part 3 : Resolution and display
+
+string = "".join(arg)
+reverse_string(string)
+
