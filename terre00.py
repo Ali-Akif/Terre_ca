@@ -2,18 +2,19 @@
 
 
 # Part 1 : Function 
-def alphabet_printer():
+def alphabet():
     """
-    Print the alphabet in lowercase.
-    
-    Returns:
-        str: alphabet
-    """
-    a = ord("a")
-    z = ord("z")
+    Create a list with alphabet in lowercase.
 
-    for i in range(a, z + 1):
-        print(chr(i), end="")
+    Returns:
+        list: Alphabet in lowercase
+    """
+    alphabet = []
+
+    for i in range(ord("a"), ord("z") + 1):
+        alphabet.append(chr(i))
+    
+    return alphabet
     
 # Part 2 : Display
-alphabet_printer()
+print("".join(alphabet()))
