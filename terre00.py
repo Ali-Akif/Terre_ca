@@ -1,4 +1,7 @@
-a, b = ord("a"), ord('z')
+#Alphabet minucule en une ligne
 
-for i in range(a, b + 1):
+a = ord("a")
+z = ord("z")
+
+for i in range(a, z + 1):
     print(chr(i), end="")
