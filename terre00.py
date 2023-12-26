@@ -2,7 +2,7 @@
 
 
 # Part 1 : Function 
-def alphabet():
+def create_alphabet():
     """
     Create a list with alphabet in lowercase.
 
@@ -17,4 +17,6 @@ def alphabet():
     return alphabet
     
 # Part 2 : Display
-print("".join(alphabet()))
+print("".join(create_alphabet()))
+
+print()
