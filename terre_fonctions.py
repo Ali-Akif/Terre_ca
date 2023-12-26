@@ -46,3 +46,23 @@ def arguments_printer ():
 
     for arg in arguments:
         print(arg)
+    
+def EH_argument_is_digit(arg):
+    """
+    Error Handling to verify the given argument is a digit, valid with +00 and -00. Meant to be used with a list.
+    """
+    if not (len(arg) == 1 and "".join(arg).lstrip("-+").isdigit()):
+        print("erreur.")
+        exit()
+
+def even_odd(number):
+    """
+    Test an int, return even or odd.
+    
+    Return :
+        str : even / odd
+    """
+    if number % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")

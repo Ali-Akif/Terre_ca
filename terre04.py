@@ -1,17 +1,21 @@
+#EVEN OR ODD
+
 import sys
+from terre_fonctions import EH_argument_is_digit, even_odd
+
+
+# Part 1 : Slicing
 
 arg = sys.argv[1:]
 
-if len(arg) > 1:
-    print("Rentre qu'un seul argument.")
-    exit()
 
-if not int(arg[0].lstrip("+-").isdigit()):
-    print("Tu ne me la mettras pas à l'envers.")
-    exit()
+# Part 2 : Error Handling
 
-elif int(arg[0]) % 2 == 0:
-    print("pair")
+EH_argument_is_digit(arg)
 
-else:
-    print("impair")
+
+# Part 3 : Resolution and display
+
+number = int("".join(arg))
+even_odd(number)
+
