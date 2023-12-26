@@ -1,12 +1,30 @@
+# NAME OF THE FILE
+
 import os
 import sys
 
-#si executé depuis le terminal :
 
-print(sys.argv[0])
+    # Part 1 : Functions
 
-#si executé autrement :
+def file_name_terminal():
+    """
+    Return the name of the current file, if executed other than by terminal 'python file_name.py', will print the file path. 
+    
+    Returns:
+        str: File name
+    """
+    return sys.argv[0]
 
-chemin = __file__
-fichier = os.path.basename(chemin)
-print("Nom du fichier :", fichier)
+def file_name_cross_platform():
+    """
+    Return the name of the current file, ensuring cross-platform compatibility.
+    
+    Returns:
+        str: File name.
+    """
+    return os.path.basename(__file__)
+
+
+    # Part 2 : Display
+
+print(file_name_cross_platform())
