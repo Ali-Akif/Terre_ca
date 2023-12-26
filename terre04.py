@@ -11,7 +11,7 @@ arg = sys.argv[1:]
 
 # Part 2 : Error Handling
 
-EH_argument_is_digit(arg)
+EH_argument_is_digit(arg, 1)
 
 
 # Part 3 : Resolution and display

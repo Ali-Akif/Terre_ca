@@ -47,12 +47,12 @@ def arguments_printer ():
     for arg in arguments:
         print(arg)
     
-def EH_argument_is_digit(arg):
+def EH_argument_is_digit(arg, a):
     """
-    Error Handling to verify the given argument is a digit, valid with +00 and -00. Meant to be used with a list.
+    Error Handling to verify the given argument is a digit, valid with +00 and -00. Meant to be used with a list. a is for the number of arguments desired
     """
-    if not (len(arg) == 1 and "".join(arg).lstrip("-+").isdigit()):
-        print("erreur.")
+    if not (len(arg) == a and "".join(arg).lstrip("-+").isdigit()):
+        print("error.")
         exit()
 
 def even_odd(number):
@@ -66,3 +66,18 @@ def even_odd(number):
         print("Even")
     else:
         print("Odd")
+
+def result_remain(a, b):
+    """
+    Print the result of a // division and the remain with % 
+    
+    Returns: 
+        str : Result: a // b \n Remain : a % b
+    """
+    if b > a:
+        print("error.")
+    elif b == 0:
+        print("error")
+    else:
+        print(f"""Result : {a // b}
+Remain : {a % b}""")
