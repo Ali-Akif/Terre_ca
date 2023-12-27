@@ -89,6 +89,24 @@ def reverse_string(string):
         reverse_string = i + reverse_string
     print(reverse_string)
 
+def power(base, exponent):
+    """
+    Multiply a base to the power of the exponent without using **
+    
+    returns : 
+        int : results
+    """
+    if exponent < 1:
+        print("error.")
+        exit()
+
+    results = base
+
+    for i in range(exponent -1): # -1 because if we do a power of 3rd, we only multiply the number by itself 2 times
+        results *= base
+    
+    print(results)
+
 # Error Handling Function
     
 def EH_argument_lenght(arg, a):
