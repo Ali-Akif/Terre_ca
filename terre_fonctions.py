@@ -120,6 +120,23 @@ def sqrt_positive_int(radicant):
         print("error.")
         exit()
 
+def prime_number(number):
+    """
+    Print if a number is prime or not, function with an int
+
+    Returns:
+        str : {number} is / is not / a prime number.
+    """
+    common_factor = 0
+    for i in range(1, number + 1):
+        if number % i == 0:
+            common_factor += 1
+    
+    if common_factor ==  2 and number != 1:
+        print(f"{number} is a prime number.")
+    else:
+        print(f"{number} is not a prime number.")
+        
 # Error Handling Function
     
 def EH_argument_lenght(arg, a):
