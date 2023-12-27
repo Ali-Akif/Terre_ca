@@ -1,23 +1,17 @@
+# POWER
+
 import sys
-
-if len(sys.argv[1:]) != 2:
-    print("erreur.")
-    exit()
-else:
-    a, b = sys.argv[1], sys.argv[2]
+from terre_fonctions import EH_argument_lenght, EH_argument_is_digit, power
 
 
-if not (a.lstrip("-+").isdigit() and b.lstrip("-+").isdigit()):
-    print("erreur.")
-    exit()
-elif b < "1":
-    print("erreur.")
-    exit()
+# Part 1 :Parcing and Error Handling 
 
-resultat = int(a) 
-exposant = 0
+arg = sys.argv[1:]
+EH_argument_is_digit(arg, 2)
+base = int(arg[0])
+exponent = int(arg[1])
 
-for i in range(1, int(b)):
-    resultat *= int(a)
 
-print(resultat)
+# Part 2 : Resolution and Display
+
+power(base, exponent)
