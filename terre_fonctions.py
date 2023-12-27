@@ -107,6 +107,19 @@ def power(base, exponent):
     
     print(results)
 
+def sqrt_positive_int(radicant):
+    """
+    Print the square root of a positive integer.
+    
+    Returns:
+        str : square root
+    """
+    if radicant > 1:
+        print(radicant ** 0.5)
+    else:
+        print("error.")
+        exit()
+
 # Error Handling Function
     
 def EH_argument_lenght(arg, a):
@@ -117,7 +130,7 @@ def EH_argument_lenght(arg, a):
         print("error.")
         exit()
 
-def EH_argument_is_digit(arg, a):
+def EH_argument_lenght_and_is_digit(arg, a):
     """
     Error Handling to verify the given argument is a digit, valid with +00 and -00. Meant to be used with a list. a is for the number of arguments desired
     """

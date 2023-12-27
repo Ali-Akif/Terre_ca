@@ -1,15 +1,16 @@
+# SQUARE ROOT OF A POSITIVE INTEGER
+
 import sys
-
-if len(sys.argv) != 2:
-    print("erreur.")
-    exit()
-else:
-    arg = sys.argv[1]
-
-if not arg.isdigit():
-    print("erreur.")
-    exit()
+from terre_fonctions import EH_argument_lenght_and_is_digit, sqrt_positive_int
 
 
-resultat = int(arg) **0.5
-print(resultat)
+# Part 1 : Parcing and Error Handling
+
+arg = sys.argv[1:]
+EH_argument_lenght_and_is_digit(arg, 1)
+radicant = int(arg[0])
+
+# Part 2 : Resolution and Display
+
+sqrt_positive_int(radicant)
+

@@ -1,12 +1,12 @@
 # DISPLAY THE RESULT AND THE REMAIN OF A DIVISION
 
 import sys
-from terre_fonctions import EH_argument_is_digit, result_remain
+from terre_fonctions import EH_argument_lenght_and_is_digit, result_remain
 
 
 # Part 1 : Error Handling
 
-EH_argument_is_digit(sys.argv[1:], 2)
+EH_argument_lenght_and_is_digit(sys.argv[1:], 2)
 
 
 # Part 2 : Slicing
