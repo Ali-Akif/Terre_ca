@@ -147,6 +147,45 @@ def EH_argument_lenght(arg, a):
         print("error.")
         exit()
 
+def hours24_to_12(str):
+    """
+    Transform a string of 00:00 in 0:00AM or PM
+    
+    Returns:
+        str : 0:00AM/PM
+    """
+    if not (len(str) == 5 and str.replace(":", "").isdigit() and str.count(":") == 1 and str.index(":") == 2):
+        print("Merci de rentrer une heure au format HH:MM")
+        exit()
+    else:
+        str = str.split(":")
+
+
+    if int(str[0]) > 23:
+        print("Merci de rentrer une heure valide.")
+        exit()
+    elif int(str[1]) > 59:
+        print("Merci de rentrer une heure valide.")
+        exit()
+    else:
+        hours = int(str[0])
+        min = str[1]
+
+    if hours > 12 or hours == 0:
+        AM_PM = "PM"
+    else:
+        AM_PM = "AM"
+
+    if AM_PM == "PM":
+        if hours != 0:
+            hours -= 12
+    
+    if hours == 0:
+        hours += 12
+
+    print(f"{hours}:{min}{AM_PM}")
+
+
 def EH_argument_lenght_and_is_digit(arg, a):
     """
     Error Handling to verify the given argument is a digit, valid with +00 and -00. Meant to be used with a list. a is for the number of arguments desired
