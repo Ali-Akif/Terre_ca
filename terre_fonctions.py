@@ -1,9 +1,11 @@
+# Part 1 : Functions, Part 2 : Error Handling
+
 import os
 import sys
 import inspect
 
 
-# FUNCTIONS
+# Part 1 : Functions
 
 def create_alphabet():
     """
@@ -29,6 +31,7 @@ def file_name_terminal():
     """
     return sys.argv[0]
 
+
 def file_name_cross_platform():
     """
     Return the name of the current file, ensuring cross-platform compatibility.
@@ -37,6 +40,7 @@ def file_name_cross_platform():
         str: File name.
     """
     return os.path.basename(__file__)
+
 
 def arguments_printer ():
     """
@@ -50,6 +54,7 @@ def arguments_printer ():
     for arg in arguments:
         print(arg)
     
+
 def even_odd(number):
     """
     Test an int, return even or odd.
@@ -61,6 +66,7 @@ def even_odd(number):
         print("Even")
     else:
         print("Odd")
+
 
 def result_remain(a, b):
     """
@@ -77,6 +83,7 @@ def result_remain(a, b):
         print(f"""Result : {a // b}
 Remain : {a % b}""") 
 
+
 def reverse_string(string):
     """
     Reverse a string
@@ -88,6 +95,7 @@ def reverse_string(string):
     for i in string:
         reverse_string = i + reverse_string
     print(reverse_string)
+
 
 def power(base, exponent):
     """
@@ -107,6 +115,7 @@ def power(base, exponent):
     
     print(results)
 
+
 def sqrt_positive_int(radicant):
     """
     Print the square root of a positive integer.
@@ -119,6 +128,7 @@ def sqrt_positive_int(radicant):
     else:
         print("error.")
         exit()
+
 
 def prime_number(number):
     """
@@ -136,16 +146,36 @@ def prime_number(number):
         print(f"{number} is a prime number.")
     else:
         print(f"{number} is not a prime number.")
-        
-# Error Handling Function
-    
-def EH_argument_lenght(arg, a):
-    """
-    Verify the lenght of a list
-    """
-    if not len(arg) == a:
-        print("error.")
+
+
+def hours12_to24(arg):
+    arg = arg.zfill(7)
+
+
+    if not( len(arg) == 7 and arg.replace(":", "").replace("PM", "").replace("AM","").isdigit() and arg.count(":") == 1 and arg.index(":") == 2 ):
+        print("Merci de rentrer une heure en format : 12:30PM.")
         exit()
+    elif not arg.index("M") == 6:
+        print("Merci de de rentrer une heure au bon format, comme 12:30AM.")
+        exit()
+
+    liste = arg[:-2].split(":") + [arg[-2:]]
+
+    hours, min, AM_PM = int(liste[0]), int(liste[1]), liste[2]
+
+    if not ( 1<= hours <13 and min <60 ):
+        print("C'est pas une heure ça frérot")
+        exit()
+
+    if AM_PM == "PM":
+        if hours == 12:
+            hours -=12
+        else:
+            hours += 12
+
+
+    print(f"{'0' if hours < 10 else ''}{hours}:{min}")
+
 
 def hours24_to_12(str):
     """
@@ -184,6 +214,17 @@ def hours24_to_12(str):
         hours += 12
 
     print(f"{hours}:{min}{AM_PM}")
+
+
+# Part 2 : Error Handling Function
+    
+def EH_argument_lenght(arg, a):
+    """
+    Verify the lenght of a list
+    """
+    if not len(arg) == a:
+        print("error.")
+        exit()
 
 
 def EH_argument_lenght_and_is_digit(arg, a):
